@@ -1,5 +1,5 @@
-import ballerina/io;
+configurable string greeting = "Hello";
 
-public function main() {
-    io:println("Hello, World!");
+public function printGreeting(string name) returns string {
+    return greeting + ", " + name + "!";
 }
