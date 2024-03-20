@@ -1,11 +1,14 @@
 import ballerina/test;
 import ballerina/http;
 
+
+@test:Mock { functionName: "initializeClient" }
+function getMockClient() returns http:Client|error {
+    return test:mock(http:Client, new MockHttpClient());
+}
+
 @test:Config {}
 public function testGetRandomJoke() {
-
-    // create and assign a test double to the `clientEndpoint` object
-    clientEndpoint = test:mock(http:Client, new MockHttpClient());
 
     // invoke the function to test
     string|error result = getRandomJoke("Sheldon");

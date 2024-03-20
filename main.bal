@@ -1,6 +1,10 @@
 import ballerina/http;
 
-http:Client clientEndpoint = check new ("https://api.chucknorris.io/jokes/");
+final http:Client clientEndpoint = check initializeClient();
+
+function initializeClient() returns http:Client|error {
+    return  new ("https://api.chucknorris.io/jokes/");
+};
 
 type Joke readonly & record {
     string value;
