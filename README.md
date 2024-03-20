@@ -15,3 +15,17 @@ bal test
 git checkout test-config
 bal test
 ```
+
+3. Test with data provider
+
+```
+git checkout test-data-provider
+bal test
+```
+
+4. Test with mock client
+
+```
+git checkout mock-client-one
+bal test
+```
